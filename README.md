@@ -31,6 +31,8 @@ This will wrap the content of [example.tex](example.tex) with the template defin
 example.pdf
 ```
 
+You can specify a dedicated build directory by passing `--output-dir=my-fancy-build-directory` to `./feynmaker.sh`. This directory will be mounted to `/output/` and inhabit your desired PDF file.
+
 ## Docker Pull Command
 The container is accessible via the [Docker Hub](https://hub.docker.com/r/avitase/feynmaker/): `docker pull avitase/feynmaker`.
 You can create your own `Dockerfile` and install additional dependencies of your project via `apt-get` or define your own template file.

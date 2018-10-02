@@ -1,6 +1,6 @@
 #!/bin/bash
 
-IMAGE=feynmaker
+IMAGE=avitase/feynmaker:latest
 SRC=$PWD
 
 if [ "$#" -lt 1 ]; then

@@ -12,4 +12,5 @@ build/%-tmp.tex: %.tex template.tex build/.dirstamp
 %.pdf: build/%-tmp.tex
 	latex -interaction=nonstopmode -halt-on-error -output-directory build $^ && \
 	cd build/ && yes q | mpost decay.mp && cd - && \
-	pdflatex -interaction=nonstopmode -halt-on-error -output-directory build -jobname $* $^
+	pdflatex -interaction=nonstopmode -halt-on-error -output-directory build -jobname $* $^ && \
+	pdfcrop build/$*.pdf build/$*.pdf

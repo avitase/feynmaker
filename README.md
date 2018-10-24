@@ -7,20 +7,25 @@ The container exposes a way to create Feynman diagrams as PDF files using the fa
 \begin{fmfgraph*}(35,25)
     \fmfbottom{i1,d1,o1}
     \fmftop{i2,d2,o2}
-    \fmf{fermion,label=$\dquark$,label.side=left}{i1,v1}
+    \fmf{fermion}{i1,v1}
     \fmf{fermion,label=$\uquark,,\cquark,,\tquark$,label.side=left}{v1,v2}
-    \fmf{fermion,label=$\bquark$,label.side=left}{v2,o1}
+    \fmf{fermion}{v2,o1}
 
-    \fmf{fermion,label=$\bquarkbar$,label.side=left}{v3,i2}
+    \fmf{fermion}{v3,i2}
     \fmf{fermion,label=$\uquarkbar,,\cquarkbar,,\tquarkbar$,label.side=left}{v4,v3}
-    \fmf{fermion,label=$\dquarkbar$,label.side=left}{o2,v4}
+    \fmf{fermion}{o2,v4}
+
+    \fmfv{l=$\bquarkbar$,l.a=180}{i2}
+    \fmfv{l=$\dquark$,l.a=180}{i1}
+    \fmfv{l=$\bquark$,l.a=0}{o1}
+    \fmfv{l=$\dquarkbar$,l.a=0}{o2}
 
     \fmffreeze
 
     \fmf{photon,label=$W$}{v3,v1}
     \fmf{photon,label=$W$}{v2,v4}
 
-    \fmfdot{v1,v2,v3,v4}
+    \fmfdotn{v}{4}
 \end{fmfgraph*}
 ```
 by calling `./feynmaker.sh example.tex`.
